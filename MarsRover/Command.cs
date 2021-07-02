@@ -40,7 +40,7 @@ namespace MarsRover
             NewMode = newMode;
             if (String.IsNullOrEmpty(newMode))
             {
-                throw new ArgumentNullException(newMode, "Command type required.");
+                throw new ArgumentNullException(newMode, "New mode required.");
             }
         }
 
