@@ -50,5 +50,17 @@ namespace MarsRoverTests
             Assert.AreEqual(newRover.Mode, "LOW_POWER");
             Assert.AreEqual(newRover.Position, 10);
         }
+
+        [TestMethod]
+        public void PositionChangesFromMoveCommand()
+        {
+            Rover newRover = new Rover(10);
+            Command[] testCommands = { new Command("MOVE", 200), new Command("MODE_CHANGE") };
+            newRover.ReceiveMessage(new Message("Move, then sleep", testCommands));
+            Assert.AreEqual(newRover.Position, 200);
+            Command[] testCommandsTwo = { new Command("MOVE", 400), new Command("MODE_CHANGE") };
+            newRover.ReceiveMessage(new Message("Try moving, then sleep", testCommandsTwo));
+            Assert.AreEqual(newRover.Position, 200);
+        }
     }
 }

@@ -30,7 +30,14 @@ namespace MarsRover
                 }
                 else if (command.CommandType == "MOVE")
                 {
-                    if (Mode == "NORMAL") Position = command.NewPostion;
+                    if (Mode == "LOW_POWER")
+                    {
+                        Console.WriteLine("ERROR! LOW_POWER - CANNOT MOVE");
+                    }
+                    else
+                    {
+                        Position = command.NewPostion;
+                    }
                 }
             }
         }
