@@ -10,6 +10,7 @@ namespace MarsRover
         public Rover(int position)
         {
             Position = position;
+            Mode = "NORMAL";
         }
 
         public override string ToString()

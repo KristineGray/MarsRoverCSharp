@@ -14,5 +14,12 @@ namespace MarsRoverTests
             Rover newRover = new Rover(300);
             Assert.AreEqual(newRover.Position, 300);
         }
+
+        [TestMethod]
+        public void ConstructorSetsDefaultMode()
+        {
+            Rover newRover = new Rover(300);
+            Assert.AreEqual(newRover.Mode, "NORMAL");
+        }
     }
 }
