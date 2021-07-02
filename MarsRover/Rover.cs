@@ -39,6 +39,10 @@ namespace MarsRover
                         Position = command.NewPostion;
                     }
                 }
+                else
+                {
+                    throw new ArgumentOutOfRangeException("INVALID COMMAND TYPE");
+                }
             }
         }
 

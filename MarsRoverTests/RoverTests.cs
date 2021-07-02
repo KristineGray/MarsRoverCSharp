@@ -62,5 +62,14 @@ namespace MarsRoverTests
             newRover.ReceiveMessage(new Message("Try moving, then sleep", testCommandsTwo));
             Assert.AreEqual(newRover.Position, 200);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void RoverReturnsAMessageForAnUnknownCommand()
+        {
+            Rover newRover = new Rover(50);
+            Command[] testCommands = { new Command("SLEEP") };
+            newRover.ReceiveMessage(new Message("Singing is not a valid command", testCommands));
+        }
     }
 }
