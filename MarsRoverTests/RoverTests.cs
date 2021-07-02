@@ -21,5 +21,12 @@ namespace MarsRoverTests
             Rover newRover = new Rover(300);
             Assert.AreEqual(newRover.Mode, "NORMAL");
         }
+
+        [TestMethod]
+        public void ConstructorSetsDefaultGeneratorWatts()
+        {
+            Rover newRover = new Rover(300);
+            Assert.AreEqual(newRover.GeneratorWatts, 110);
+        }
     }
 }

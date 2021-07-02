@@ -11,6 +11,7 @@ namespace MarsRover
         {
             Position = position;
             Mode = "NORMAL";
+            GeneratorWatts = 110;
         }
 
         public override string ToString()
