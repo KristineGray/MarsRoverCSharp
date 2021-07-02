@@ -8,6 +8,11 @@ namespace MarsRoverTests
     [TestClass]
     public class RoverTests
     {
-
+        [TestMethod]
+        public void ConstructorSetsDefaultPosition()
+        {
+            Rover newRover = new Rover(300);
+            Assert.AreEqual(newRover.Position, 300);
+        }
     }
 }

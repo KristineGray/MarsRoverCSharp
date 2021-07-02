@@ -6,6 +6,9 @@ namespace MarsRover
         public string Name { get; set; }
         public Command[] Commands { get; set; }
 
+
+        public Message() { }
+       
         public Message(string name, Command[] commands)
         {
             Name = name;
