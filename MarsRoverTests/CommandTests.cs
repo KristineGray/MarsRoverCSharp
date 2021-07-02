@@ -35,5 +35,12 @@ namespace MarsRoverTests
             Assert.AreEqual(newCommand.NewPostion, 20);
         }
 
+        [TestMethod]
+        public void ConstructorSetsInitialNewModeValue()
+        {
+            Command newCommand = new Command("MOVE", 40, "ASLEEP");
+            Assert.AreEqual(newCommand.NewMode, "ASLEEP");
+        }
+
     }
 }
