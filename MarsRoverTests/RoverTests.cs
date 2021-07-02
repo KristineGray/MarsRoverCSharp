@@ -8,6 +8,8 @@ namespace MarsRoverTests
     [TestClass]
     public class RoverTests
     {
+        Command[] commands = { new Command("MODE_CHANGE") };
+
         [TestMethod]
         public void ConstructorSetsDefaultPosition()
         {
@@ -27,6 +29,15 @@ namespace MarsRoverTests
         {
             Rover newRover = new Rover(300);
             Assert.AreEqual(newRover.GeneratorWatts, 110);
+        }
+
+        [TestMethod]
+        public void RespondsCorrectlyToModeChangeCommand()
+        {
+            Message newMessage = new Message("Go to bed", commands);
+            Rover newRover = new Rover(700);
+            newRover.ReceiveMessage(newMessage);
+            Assert.AreEqual(newRover.Mode, "LOW_POWER");
         }
     }
 }

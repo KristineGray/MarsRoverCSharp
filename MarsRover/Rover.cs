@@ -19,5 +19,17 @@ namespace MarsRover
             return "Position: " + Position + " - Mode: " + Mode + " - GeneratorWatts: " + GeneratorWatts; 
         }
 
+        public void ReceiveMessage(Message message)
+        {
+            foreach (Command command in message.Commands)
+            {
+                if (command.CommandType == "MODE_CHANGE")
+                {
+                    if (Mode == "NORMAL") Mode = "LOW_POWER";
+                    else Mode = "NORMAL";
+                }
+            }
+        }
+
     }
 }
