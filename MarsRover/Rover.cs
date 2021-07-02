@@ -28,6 +28,10 @@ namespace MarsRover
                     if (Mode == "NORMAL") Mode = "LOW_POWER";
                     else Mode = "NORMAL";
                 }
+                else if (command.CommandType == "MOVE")
+                {
+                    if (Mode == "NORMAL") Position = command.NewPostion;
+                }
             }
         }
 
