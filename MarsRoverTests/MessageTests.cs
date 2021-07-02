@@ -22,5 +22,12 @@ namespace MarsRoverTests
             }
         }
 
+        [TestMethod]
+        public void ConstructorSetsName()
+        {
+            Message newMessage = new Message("SUCCESS", commands);
+            Assert.AreEqual(newMessage.Name, "SUCCESS");
+        }
+
     }
 }
